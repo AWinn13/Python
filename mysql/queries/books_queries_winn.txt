@@ -1,0 +1,71 @@
+
+Query: Create 5 different users: Jane Amsden, Emily Dixon, Theodore Dostoevsky, William Shapiro, Lao Xiu
+
+
+
+
+
+Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+
+Query: Change the name of the C Sharp book to C#
+
+Query: Change the first name of the 4th user to Bill
+
+Query: Have the first user favorite the first 2 books
+
+Query: Have the second user favorite the first 3 books
+
+Query: Have the third user favorite the first 4 books
+
+Query: Have the fourth user favorite all the books
+
+Query: Retrieve all the users who favorited the 3rd book
+
+Query: Remove the first user of the 3rd book's favorites
+
+Query: Have the 5th user favorite the 2nd book
+
+Find all the books that the 3rd user favorited
+
+Query: Find all the users that favorited to the 5th book
+
+
+
+Query: Create 3 new dojos
+insert into dojos (name)
+values('Austin'),('Ontario'),('Spokane');
+
+
+Query: Delete the 3 dojos you just created
+delete from dojos
+where id > 0;
+
+
+
+
+Query: Create 3 more dojos
+insert into dojos (name)
+values('Austin'),('Ontario'),('Spokane');
+
+
+Query: Create 3 ninjas that belong to the first dojo
+
+Query: Create 3 ninjas that belong to the second dojo
+Query: Create 3 ninjas that belong to the third dojo
+insert into ninjas (name, age, dojo_id)
+values ('John', 40, 4),('Bill', 30, 4),('Ted', 75, 4),('Theo', 25, 5),('Kate', 40, 5),('Sally', 30, 6),('Olive', 75, 6),('Toad', 25, 6);
+
+
+Query: Retrieve all the ninjas from the first dojo
+select * from ninjas
+where dojo_id=4
+
+
+Query: Retrieve all the ninjas from the last dojo
+select * from ninjas
+where dojo_id=6
+
+
+Query: Retrieve the last ninja's dojo
+select dojo_id from ninjas
+where id=(select max(id) from ninjas);

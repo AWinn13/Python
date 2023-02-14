@@ -1,0 +1,52 @@
+
+Query: Create 3 new users
+INSERT INTO users (first_name, last_name, email) 
+VALUES('Joe', 'Dirt', 'lifesaparty@hotmail.com'),('William', 'Shakespeare', 'immortalbard@gmail.com'),('Bob', 'Rob', 'robrob@gmail.com');
+
+Query: Retrieve all the users
+SELECT * 
+FROM users;
+
+
+Query: Retrieve the first user using their email address
+SELECT email 
+FROM users
+WHERE id=1;
+
+Query: Retrieve the last user using their id
+SELECT *
+from users
+where id=3;
+
+
+Query: Change the user with id=3 so their last name is Pancakes
+UPDATE users
+SET last_name='Pancakes'
+WHERE id=3;
+
+
+Query: Delete the user with id=2 from the database
+DELETE FROM users
+where id=2;
+
+
+Query: Get all the users, sorted by their first name
+SELECT * FROM users 
+ORDER BY first_name;
+
+
+BONUS Query: Get all the users, sorted by their first name in descending order
+
+SELECT * FROM users 
+ORDER BY first_name DESC;
+
+
+
+
+20:37:19	delete from dojos	Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.	0.000 sec
+
+
+
+
+
+

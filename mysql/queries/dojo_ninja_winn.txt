@@ -1,0 +1,43 @@
+*******Worked with peyton***********
+
+
+
+
+Query: Create 3 new dojos
+insert into dojos (name)
+values('Austin'),('Ontario'),('Spokane');
+
+
+Query: Delete the 3 dojos you just created
+delete from dojos
+where id > 0;
+
+
+
+
+Query: Create 3 more dojos
+insert into dojos (name)
+values('Austin'),('Ontario'),('Spokane');
+
+
+Query: Create 3 ninjas that belong to the first dojo
+
+Query: Create 3 ninjas that belong to the second dojo
+Query: Create 3 ninjas that belong to the third dojo
+insert into ninjas (name, age, dojo_id)
+values ('John', 40, 4),('Bill', 30, 4),('Ted', 75, 4),('Theo', 25, 5),('Kate', 40, 5),('Sally', 30, 6),('Olive', 75, 6),('Toad', 25, 6);
+
+
+Query: Retrieve all the ninjas from the first dojo
+select * from ninjas
+where dojo_id=4
+
+
+Query: Retrieve all the ninjas from the last dojo
+select * from ninjas
+where dojo_id=6
+
+
+Query: Retrieve the last ninja's dojo
+select dojo_id from ninjas
+where id=(select max(id) from ninjas);
