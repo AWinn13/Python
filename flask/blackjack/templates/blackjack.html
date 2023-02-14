@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .card-img-top {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #212529;
+            color: white;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Blackjack</h1>
+        <p class="text-center">{{ result }}</p>
+        <div class="d-flex justify-content-between">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">Dealer</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <img src="{{ url_for('static', filename='img/' + CARD_IMAGE_MAPPING[dealer_hand[0]]) }}"
+                            class="card-img-top" alt="Card image">
+                            <img src="{{ url_for('static', filename='img/' + CARD_IMAGE_MAPPING[dealer_hand[1]]) }}"
+                            class="card-img-top" alt="Card image">
+                    </li>
+
+                </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">You</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item">
+                        <img src="{{ url_for('static', filename='img/' + CARD_IMAGE_MAPPING[player_hand[0]]) }}"
+                            class="card-img-top" alt="Card image">
+                        <img src="{{ url_for('static', filename='img/' + CARD_IMAGE_MAPPING[player_hand[1]]) }}"
+                            class="card-img-top" alt="Card image">
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% if result == "" %}
+        <form method="post">
+            <div class="d-flex justify-content-center my-5">
+                <button type="submit" name="action" value="hit" class="btn btn-primary mx-3">Hit</button>
+                <button type="submit" name="action" value="stand" class="btn btn-primary mx-3">Stand</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</body>
+
+</html>

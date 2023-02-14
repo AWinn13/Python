@@ -1,0 +1,18 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    
+}
+
+
+.low {
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(130, 7, 7);
+}
+.high {
+    height: 300px;
+    width: 300px;
+    background-color: rgb(130, 7, 7);
+}

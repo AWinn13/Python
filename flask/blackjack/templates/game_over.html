@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .card {
+            width: 5rem;
+            height: 7rem;
+            display: inline-block;
+            margin: 0.5rem;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 7rem;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .hand-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+
+        .control {
+            margin: 0 1rem;
+        }
+
+        .game-over {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body style="background-color: #343a40; color: white;">
+    <div class="container my-5">
+        <h1 class="text-center">Blackjack Game</h1>
+        <div class="game-over">
+            <p>{{ result }}</p>
+        </div>
+    </div>
+</body>
+
+</html>
