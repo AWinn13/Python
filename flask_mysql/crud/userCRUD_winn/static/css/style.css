@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: auto;
+    
+}
+
+
+.opacity-75{
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-floating{
+    margin-top: 10px;
+}
+
+
+.press {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+}
+
+
+    
+
+button {
+    margin: 0 auto;
+    width: 50%;
+    
+
+
+}
+
+
+
+h2 {
+    background-color: blue;
+}
+
+.accordion{
+    background-color: blueviolet;
+}
+
+
