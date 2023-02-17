@@ -14,24 +14,25 @@
 
 <body>
     <div class="container">
-        <a href="/users">Home</a>
-        <form action="/users/create" method="post" class="w-50 p-4 bg-info-subtle text-emphasis-info mx-auto">
+        <h1>User {{user.id}}</h1>
+        <form action="/users/update" method="post" class="w-50 p-4 bg-info-subtle text-emphasis-info mx-auto">
             <div class="opacity-75" class="object-fit-lg-contain border rounded">
+                <input type="hidden" name="id" value={{user.id}}>
                 <h1 class="text-center">Add User</h1>
                 <div class="form-floating">
-                    <input name="first_name" type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                    <input name="first_name" type="text" class="form-control" id="floatingInput" value="{{user.first_name}}">
                     <label for="floatingInput">First Name</label>
                 </div>
                 <div class="form-floating">
-                    <input name="last_name" type="text" class="form-control" id="floatingLast" placeholder="Last Name">
+                    <input name="last_name" type="text" class="form-control" id="floatingLast" value="{{user.last_name}}">
                     <label for="floatingLast">Last Name</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingEmail" placeholder="Email" name="email">
+                    <input type="text" class="form-control" id="floatingEmail" value="{{user.email}}" name="email">
                     <label for="floatingEmail">Email</label>
                 </div>
                 <div class="mt-2 mx-auto w-25">
-                    <button class="" type="submit" >Submit</button>
+                    <button class="" type="submit">Update</button>
                 </div>
             </div>
         </form>
@@ -42,3 +43,4 @@
 </body>
 
 </html>
+
