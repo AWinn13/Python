@@ -1,4 +1,4 @@
-from flask_app.controllers import authors_controller, books_controller
+from flask_app.controllers import sighting_controller, loginandreg_controller
 from flask_app import app
 #! ALWAYS IMPORT CONTROLLERS
 

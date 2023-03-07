@@ -31,7 +31,11 @@
                         <tr>
                             
                             <td>{{recipe.name}}</td>
-                            <td>{{recipe.underthirty}}</td>
+                            {% if recipe.underthirty == 1%}
+                                <td>yes</td>
+                            {% else %}
+                                <td>no</td>
+                            {% endif %}
                             <td>{{recipe.maker.first_name}}</td>
                             <td>
                                 <a href="/recipes/{{recipe.id}}">view recipe</a>

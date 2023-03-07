@@ -21,8 +21,17 @@
             <form action="/register" method="post" class="w-75 p-4 bg-info-subtle text-emphasis-info">
                 <div class="opacity-75" class="object-fit-lg-contain border rounded">
                     <h1>Registration</h1>
+                    {% with errors = get_flashed_messages(category_filter=["reg_error"]) %}
+                        {% if errors %}
+                        <div class="alert-message block-message error">
+                            {%for message in get_flashed_messages() %}
+                                <p class="text-danger fw-bolder">{{message}}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
                     <div class="form-floating">
-                        <input name="first_name" type="text" class="form-control" id="floatingInput">
+                        <input name="first_name" type="text" class="form-control" id="floatingInput" placeholder="name">
                         <label for="floatingInput">Name</label>
                     </div>
                     <div class="form-floating">
@@ -47,23 +56,21 @@
                 </div>
                 <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
-            {% with errors = get_flashed_messages(category_filter=["reg_error"]) %}
-                {% if errors %}
-                    <div class="alert-message block-message error">
-                        <ul>
-                        {%- for msg in errors %}
-                            <li>{{ msg }}</li>
-                        {% endfor -%}
-                        </ul>
-                    </div>
-                {% endif %}
-            {% endwith %}
         </div>
     
             <div class="col">
                 <form action="/login" method="post" class="w-75 p-4 bg-info-subtle text-emphasis-info">
                     <div class="opacity-75" class="object-fit-lg-contain border rounded">
                         <h1>Login</h1>
+                        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+                            {% if errors %}
+                                <div class="alert-message block-message error">
+                                {%for msg in get_flashed_messages() %}
+                                <p class="text-danger fw-bolder">{{msg}}</p>
+                                {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
                         <div class="form-floating">
                             <input name="email" type="email" class="form-control" id="floatingEmail">
                             <label for="floatingEmail">Email</label>
@@ -77,17 +84,6 @@
                         </div>
                     </div>
                 </form>
-                {% with errors = get_flashed_messages(category_filter=["error"]) %}
-                    {% if errors %}
-                    <div class="alert-message block-message error">
-                        <ul>
-                        {%- for msg in errors %}
-                            <li>{{ msg }}</li>
-                        {% endfor -%}
-                        </ul>
-                    </div>
-                    {% endif %}
-                {% endwith %}
             </div>
         </div>
     </div>

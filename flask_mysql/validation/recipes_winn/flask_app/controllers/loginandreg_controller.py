@@ -40,7 +40,7 @@ def login():
 
 @app.route('/logout')
 def logout_user():
-    session.clear
+    session.clear()
     return redirect('/')
 
 

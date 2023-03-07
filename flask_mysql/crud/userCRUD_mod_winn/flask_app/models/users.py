@@ -1,4 +1,6 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
+
+
 # model the class after the user table from our database ----responsible for creating the table and inserting data into it
 class User:
     def __init__( self , data ):

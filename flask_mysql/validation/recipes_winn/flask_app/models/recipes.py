@@ -1,4 +1,4 @@
-# -----------------WORKED WITH PEYTON
+# -----------------WORKED WITH PEYTON--------------
 
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
@@ -65,8 +65,7 @@ class Recipe:
                 this_user = loginandreg.User(user_data)
                 this_recipe.maker = this_user
                 all_recipes.append(this_recipe)
-            return all_recipes
-        return False
+        return all_recipes
     # -----------------------Get One-------------------------
     @classmethod
     def get_one_recipe(cls, data):
